@@ -1,0 +1,4 @@
+.dep.stm32/
+.obj.stm32/
+.upload/
+out/AM.*

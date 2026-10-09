@@ -1,0 +1,49 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug",
+      "request": "launch",
+      "type": "cortex-debug",
+      "cwd": "${workspaceRoot}",
+      "servertype": "openocd",
+      "device": "STM32F103",
+      "executable": "${workspaceRoot}/out/AM.elf",
+      "svdFile": "${workspaceRoot}/STM32F103.svd",
+      "configFiles": [
+        "interface/stlink.cfg",
+        "target/stm32f1x.cfg"
+      ],
+      "searchDir": [
+        "/usr/share/openocd/scripts"
+      ],
+      "runToEntryPoint": "main",
+      "showDevDebugOutput": "raw",
+      "toolchainPrefix": "arm-none-eabi",
+      "armToolchainPath": "/usr/bin",
+      "preLaunchCommands": [
+        "set pagination off",
+        "set confirm off"
+      ],
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "/home/frain/Documents/AMP-4/src",
+      "program": "/home/frain/Documents/AMP-4/src/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
